@@ -1,7 +1,15 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const Listings = () => {
+interface Props {
+    listings : any[];
+    category: string;
+}
+
+const Listings = ({listings,category }: Props) => {
+    useEffect(() => {
+        console.log('RELOAD LISTINGS');
+    }, [category]);
   return (
     <View>
       <Text>Listings</Text>
@@ -9,4 +17,4 @@ const Listings = () => {
   )
 }
 
-export default Listings
+export default Listings;
